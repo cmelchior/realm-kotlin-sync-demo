@@ -18,13 +18,15 @@ kotlin {
     }
 
     iosTarget("ios") {}
+    macosX64("macos") {}
+    jvm {}
 
     cocoapods {
-        summary = "Realm Kotlin Sync Demo"
+        summary = "Realm Kotlin Sync Demo Shared Library"
         homepage = "https://github.com/realm/realm-kotlin"
         ios.deploymentTarget = "14.1"
+        osx.deploymentTarget = "11.0"
         frameworkName = "shared"
-        podfile = project.file("../iosApp/Podfile")
     }
     
     sourceSets {
@@ -44,6 +46,8 @@ kotlin {
         }
         val iosMain by getting
         val iosTest by getting
+        val macosMain by getting
+        val macosTest by getting
     }
 }
 

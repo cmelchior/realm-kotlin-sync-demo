@@ -1,5 +1,5 @@
 target 'macosApp' do
   use_frameworks!
-  platform :osx, '10.15.7'
+  platform :osx, '11.1'
   pod 'shared', :path => '../shared'
 end

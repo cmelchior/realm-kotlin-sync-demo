@@ -4,6 +4,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("io.realm.kotlin")
 }
 
 version = "1.0"
@@ -30,7 +31,12 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt")
+                implementation("io.realm.kotlin:library-sync:0.6.0-SYNC-SNAPSHOT")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -48,14 +54,15 @@ kotlin {
         val iosTest by getting
         val macosMain by getting
         val macosTest by getting
+        val jvmMain by getting
     }
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk= 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(30)
+        minSdk = 21
+        targetSdk = 30
     }
 }

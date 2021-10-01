@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "Realm_Kotlin_Sync_Demo"
+rootProject.name = "Realm Kotlin Sync Demo"
 include(":androidApp")
 include(":jvmApp")
 include(":shared")

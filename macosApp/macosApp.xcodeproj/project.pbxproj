@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79209147469BB583EE4B66D6 /* Pods_macosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F975C0A19332F8F51075E7CB /* Pods_macosApp.framework */; };
-		832C50A227067DDB0086207A /* macosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C50A127067DDB0086207A /* macosAppApp.swift */; };
+		832C50A227067DDB0086207A /* MacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C50A127067DDB0086207A /* MacOSApp.swift */; };
 		832C50A427067DDB0086207A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C50A327067DDB0086207A /* ContentView.swift */; };
 		832C50A627067DE20086207A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832C50A527067DE20086207A /* Assets.xcassets */; };
 		832C50A927067DE20086207A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832C50A827067DE20086207A /* Preview Assets.xcassets */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		3A572C1A237E2FCC7AF9267E /* Pods-macosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macosApp.release.xcconfig"; path = "Target Support Files/Pods-macosApp/Pods-macosApp.release.xcconfig"; sourceTree = "<group>"; };
 		832C509E27067DDA0086207A /* macosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		832C50A127067DDB0086207A /* macosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macosAppApp.swift; sourceTree = "<group>"; };
+		832C50A127067DDB0086207A /* MacOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSApp.swift; sourceTree = "<group>"; };
 		832C50A327067DDB0086207A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		832C50A527067DE20086207A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		832C50A827067DE20086207A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				832C50EE27072F450086207A /* ViewModel.swift */,
-				832C50A127067DDB0086207A /* macosAppApp.swift */,
+				832C50A127067DDB0086207A /* MacOSApp.swift */,
 				832C50A327067DDB0086207A /* ContentView.swift */,
 				832C50FC270774FC0086207A /* Theme.swift */,
 				832C50A527067DE20086207A /* Assets.xcassets */,
@@ -320,7 +320,7 @@
 				832C50A427067DDB0086207A /* ContentView.swift in Sources */,
 				832C50FD270774FC0086207A /* Theme.swift in Sources */,
 				832C50EF27072F450086207A /* ViewModel.swift in Sources */,
-				832C50A227067DDB0086207A /* macosAppApp.swift in Sources */,
+				832C50A227067DDB0086207A /* MacOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

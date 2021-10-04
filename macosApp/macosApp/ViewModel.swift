@@ -1,40 +1,48 @@
 //
 //  ViewModel.swift
-//  iosApp
+//  macosApp
 //
-//  Created by Christian Melchior on 28/09/2021.
-//  Copyright © 2021 orgName. All rights reserved.
+//  Created by Christian Melchior on 24/09/2021.
 //
-
 import Foundation
 import Combine
 import shared
 
-class CounterViewModel: ObservableObject {
-    @Published var counter: String = "-"
+// Generic Observable View Model, making it easier to control the lifecycle
+// of multiple Flows.
+class ObservableViewModel {
+    private var jobs = Array<Closeable>() // List of Kotlin Coroutine Jobs
 
-    private let repository: CounterRepository
-    private var job: Closeable? = nil
-        
-    init(repository: CounterRepository) {
-        self.repository = repository
+    func addObserver(observer: Closeable) {
+        jobs.append(observer)
     }
     
+    func stop() {
+        jobs.forEach { job in job.close() }
+    }
+}
+
+class MacOSCounterViewModel: ObservableViewModel, ObservableObject {
+    @Published var counter: String = "-"
+
+    private let vm: SharedCounterViewModel = SharedCounterViewModel()
+        
     func increment() {
-        self.repository.adjust(change: 1)
+        vm.increment()
     }
 
     func decrement() {
-        self.repository.adjust(change: -1)
+        vm.decrement()
     }
     
-    func startObservingCounter() {
-        self.job = self.repository.observeCommon().watch { counterValue in
-            self.counter = counterValue!.stringValue
-        }
+    func start() {
+        addObserver(observer: vm.observeCounter().watch { counterValue in
+            self.counter = counterValue! as String
+        })
     }
     
-    func stopObservingCounter() {
-        job?.close()
+    override func stop() {
+        super.stop()
+        vm.close()
     }
 }

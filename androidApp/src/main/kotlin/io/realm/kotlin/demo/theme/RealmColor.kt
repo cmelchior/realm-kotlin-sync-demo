@@ -6,6 +6,7 @@ object RealmColor {
     // Grays
     val Charcoal = Color(0xFF1C233F)
     val Elephant = Color(0xFF9A9BA5)
+    val ElephantHalf = Color(0xFFb1b3bf)
     val Dov = Color(0xFFEBEBF2)
 
     // Orb colors

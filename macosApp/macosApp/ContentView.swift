@@ -13,7 +13,7 @@ struct Screen {
 }
 
 struct ContentView: View {
-    @ObservedObject var vm = MacOSCounterViewModel()
+    @ObservedObject var viewModel: MacOSCounterViewModel
     var screen = Screen(width: 320, height: 500)
     var body: some View {
         ZStack {
@@ -25,10 +25,10 @@ struct ContentView: View {
 
             VStack(spacing: 0) {
                 CounterButton(screen: screen, action:{
-                    vm.increment()
+                    viewModel.increment()
                 })
                 CounterButton(screen: screen, action: {
-                    vm.decrement()
+                    viewModel.decrement()
                 })
             }
             .frame(
@@ -36,18 +36,19 @@ struct ContentView: View {
                 minHeight: screen.height
             )
             
-            Text(vm.counter)
+            Text(viewModel.counter)
                 .fontWeight(.bold)
                 .font(.system(size: 150))
 
         }
         .onAppear {
-            vm.start()
+            viewModel.start()
         }
         .onDisappear {
-            vm.stop()
+            viewModel.stop()
         }
-    }}
+    }
+}
 
 struct CounterButton: View {
     var screen: Screen
@@ -73,7 +74,7 @@ struct CounterButton: View {
 
 struct ContentView_Previews: PreviewProvider {
    static var previews: some View {
-       ContentView()
+       ContentView(viewModel: MacOSCounterViewModel())
            .previewDevice(PreviewDevice(rawValue: "Mac"))
    }
 }

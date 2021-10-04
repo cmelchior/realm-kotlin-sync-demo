@@ -42,6 +42,7 @@ class CounterActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        title = "Realm Kotlin Demo - ${viewModel.platform}"
         setContent {
             CounterApp(viewModel)
         }

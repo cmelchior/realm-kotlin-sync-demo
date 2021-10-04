@@ -16,9 +16,9 @@
 package io.realm.kotlin.demo.ui
 
 import androidx.lifecycle.ViewModel
-import io.realm.kotlin.shared.util.CommonFlow
-import io.realm.kotlin.shared.viewmodel.counter.CounterViewModel
-import io.realm.kotlin.shared.viewmodel.counter.SharedCounterViewModel
+import io.realm.kotlin.demo.shared.feature.counter.CounterViewModel
+import io.realm.kotlin.demo.shared.feature.counter.SharedCounterViewModel
+import io.realm.kotlin.demo.shared.util.CommonFlow
 
 class AndroidCounterViewModel: CounterViewModel, ViewModel() {
     private val vm = SharedCounterViewModel()

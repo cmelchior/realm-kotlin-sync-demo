@@ -16,14 +16,14 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import io.realm.kotlin.demo.theme.RealmColor
-import io.realm.kotlin.shared.viewmodel.counter.SharedCounterViewModel
+import io.realm.kotlin.demo.shared.feature.counter.SharedCounterViewModel
 
 fun main() {
     val vm = SharedCounterViewModel()
     application {
         Window(
             onCloseRequest = ::exitApplication,
-            title = "Realm Kotlin Demo",
+            title = "Realm Kotlin Demo - ${vm.platform}",
             state = rememberWindowState(width = 320.dp, height = 500.dp)
         ) {
             MaterialTheme {

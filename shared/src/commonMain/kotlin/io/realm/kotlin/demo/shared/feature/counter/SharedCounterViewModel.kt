@@ -1,8 +1,8 @@
-package io.realm.kotlin.shared.viewmodel.counter
+package io.realm.kotlin.demo.shared.feature.counter
 
-import io.realm.kotlin.shared.data.CounterRepository
-import io.realm.kotlin.shared.util.CommonFlow
-import io.realm.kotlin.shared.util.asCommonFlow
+import io.realm.kotlin.demo.shared.model.CounterRepository
+import io.realm.kotlin.demo.shared.util.CommonFlow
+import io.realm.kotlin.demo.shared.util.asCommonFlow
 import kotlinx.coroutines.flow.map
 
 /**

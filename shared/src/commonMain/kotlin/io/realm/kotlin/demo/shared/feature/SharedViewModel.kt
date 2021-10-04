@@ -1,4 +1,4 @@
-package io.realm.kotlin.shared.viewmodel
+package io.realm.kotlin.demo.shared.feature
 
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope

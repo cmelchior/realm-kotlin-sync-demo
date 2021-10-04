@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct MacOSApp: App {
+    let vm = MacOSCounterViewModel()
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup(vm.platform(), id: "MainScreen") {
+            ContentView(viewModel: vm)
         }
     }
 }

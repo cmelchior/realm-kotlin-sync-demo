@@ -1,4 +1,4 @@
-package io.realm.kotlin.shared.data.entity
+package io.realm.kotlin.demo.shared.model.entity
 
 import io.realm.RealmList
 import io.realm.RealmObject

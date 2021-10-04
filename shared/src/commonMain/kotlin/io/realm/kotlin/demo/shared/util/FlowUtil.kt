@@ -1,4 +1,4 @@
-package io.realm.kotlin.shared.util
+package io.realm.kotlin.demo.shared.util
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

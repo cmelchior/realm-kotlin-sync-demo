@@ -24,9 +24,12 @@ class ObservableViewModel {
 
 class MacOSCounterViewModel: ObservableViewModel, ObservableObject {
     @Published var counter: String = "-"
-
     private let vm: SharedCounterViewModel = SharedCounterViewModel()
-        
+
+    func platform() -> String {
+        return vm.platform
+    }
+    
     func increment() {
         vm.increment()
     }

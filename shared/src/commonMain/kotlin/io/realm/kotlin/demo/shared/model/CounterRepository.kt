@@ -1,8 +1,8 @@
-package io.realm.kotlin.shared.data
+package io.realm.kotlin.demo.shared.model
 
 import io.realm.Realm
 import io.realm.internal.platform.runBlocking
-import io.realm.kotlin.shared.data.entity.Counter
+import io.realm.kotlin.demo.shared.model.entity.Counter
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials

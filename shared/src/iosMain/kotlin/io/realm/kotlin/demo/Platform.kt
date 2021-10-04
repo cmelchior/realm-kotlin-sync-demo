@@ -1,4 +1,4 @@
-package io.realm.kotlin
+package io.realm.kotlin.demo
 
 import platform.UIKit.UIDevice
 

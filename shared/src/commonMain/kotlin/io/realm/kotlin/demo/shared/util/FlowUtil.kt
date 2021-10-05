@@ -10,17 +10,6 @@ import kotlinx.coroutines.flow.onEach
 /**
  * Wrapper to consume Flow based API from Obj-C/Swift
  * Credit - https://github.com/JetBrains/kotlinconf-app/blob/master/common/src/mobileMain/kotlin/org/jetbrains/kotlinconf/FlowUtils.kt
- *
- * Alternatives:
- * 1) We can use the 'Kotlinx_coroutines_coreFlowCollector' protocol from Swift as demonstrated in
- *    https://stackoverflow.com/a/66030092. However, the below wrapper gives us more control and
- *    hides the complexity in the shared Kotlin code.
- *
- * 2) Use this approach: https://johnoreilly.dev/posts/kotlinmultiplatform-swift-combine_publisher-flow/
- * 3) Use this approach: https://touchlab.co/kotlin-coroutines-swift-revisited/
- *
- * All Use Cases must
- *
  */
 class CommonFlow<T>(private val origin: Flow<T>) : Flow<T> by origin {
     fun watch(block: (T) -> Unit): Closeable {

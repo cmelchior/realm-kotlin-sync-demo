@@ -34,18 +34,15 @@ import kotlinx.coroutines.launch
  */
 class CounterRepository {
 
-    // TODO Inject
+    // TODO Move App creation to Application Start
+    // TODO Move Login to own View and control flow
     private lateinit var realm: Realm
     private val counterObj: Counter
-    private val app: App = App.create(
-        AppConfiguration.Builder("testapp1-nwywh")
-            .baseUrl("http://127.0.0.1:9090")
-            .build()
-    )
+    private val app: App = App.create(AppConfiguration.Builder("realm-kotlin-sync-demo-lhcgs").build())
 
     init {
         runBlocking {
-            val user = app.login(Credentials.emailPassword("cm@mongodb.com", "123456"))
+            val user = app.login(Credentials.emailPassword("foo@bar.com", "123456"))
             val config = SyncConfiguration.Builder(
                 schema = setOf(Counter::class),
                 user = user,
@@ -69,17 +66,14 @@ class CounterRepository {
 
     /**
      * Adjust the counter up and down.
-     * When the counter reaches 100, it resets.
      */
     public fun adjust(change: Int) {
-        // Use an application wide dispatcher
+        // TODO Use an application wide dispatcher
         CoroutineScope(Dispatchers.Default).launch {
             realm.write {
-                // println("Start change on ${this.version()}")
-                // println("Find ${counterObj.version()}")
                 findLatest(counterObj)?.run {
                     list.add(change)
-                }
+                } ?: println("Could not update Counter")
             }
         }
     }
@@ -89,12 +83,7 @@ class CounterRepository {
      */
     fun observeCounter(): Flow<Long> {
         return realm.objects(Counter::class).query("_id = 'primary'").observe()
-            .filter {
-                if (it.size != 1) {
-                    println("Size is: ${it.size}")
-                }
-                it.size == 1
-            }
+            .filter { it.size == 1 }
             .map { it.first() }
             .map {
                 it.list.fold(0L,) { sum, el -> sum + el }

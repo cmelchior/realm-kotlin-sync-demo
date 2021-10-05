@@ -13,17 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.shared.model.entity
+package io.realm.kotlin.demo.ui.counter
 
-import io.realm.RealmList
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
-import io.realm.realmListOf
+import platform.Foundation.NSProcessInfo
 
-class Counter: RealmObject {
-    @PrimaryKey
-    var _id: String = "primary"
-    var realm_id: String? = "my-partition"
-    // We haven't migrated RealmMutableInteger yet, so emulate it using a list.
-    var list: RealmList<Int> = realmListOf()
+actual class Platform actual constructor() {
+    actual val platform: String = NSProcessInfo.processInfo.operatingSystemVersionString
 }

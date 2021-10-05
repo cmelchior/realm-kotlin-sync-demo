@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.ui
+package io.realm.kotlin.demo.ui.counter
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -33,8 +33,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import io.realm.kotlin.shared.theme.MyApplicationTheme
 import io.realm.kotlin.demo.theme.RealmColor
+import io.realm.kotlin.shared.theme.MyApplicationTheme
 
 class CounterActivity : ComponentActivity() {
 

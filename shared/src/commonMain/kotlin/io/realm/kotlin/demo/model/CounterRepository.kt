@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.shared.model
+package io.realm.kotlin.demo.model
 
+import Counter
 import io.realm.Realm
 import io.realm.internal.platform.runBlocking
-import io.realm.kotlin.demo.shared.model.entity.Counter
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials

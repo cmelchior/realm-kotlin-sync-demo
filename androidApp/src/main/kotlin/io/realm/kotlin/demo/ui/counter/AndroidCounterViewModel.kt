@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.ui
+package io.realm.kotlin.demo.ui.counter
 
 import androidx.lifecycle.ViewModel
-import io.realm.kotlin.demo.shared.feature.counter.CounterViewModel
-import io.realm.kotlin.demo.shared.feature.counter.SharedCounterViewModel
-import io.realm.kotlin.demo.shared.util.CommonFlow
+import io.realm.kotlin.demo.util.CommonFlow
 
 class AndroidCounterViewModel: CounterViewModel, ViewModel() {
     private val vm = SharedCounterViewModel()

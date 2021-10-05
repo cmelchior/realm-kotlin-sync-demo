@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.shared.feature.counter
+package io.realm.kotlin.demo.ui.counter
 
-import io.realm.kotlin.demo.shared.model.CounterRepository
-import io.realm.kotlin.demo.shared.util.CommonFlow
-import io.realm.kotlin.demo.shared.util.asCommonFlow
+import io.realm.kotlin.demo.model.CounterRepository
+import io.realm.kotlin.demo.util.CommonFlow
+import io.realm.kotlin.demo.util.asCommonFlow
 import kotlinx.coroutines.flow.map
 
 /**

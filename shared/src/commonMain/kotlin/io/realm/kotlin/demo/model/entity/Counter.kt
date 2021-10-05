@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo.shared.feature.counter
 
-import io.realm.kotlin.demo.Platform
-import io.realm.kotlin.demo.shared.feature.SharedViewModel
-import io.realm.kotlin.demo.shared.util.CommonFlow
 
-/**
- * Interface describing the ViewModel on both the `shared` and `platform` side.
- */
-interface CounterViewModel: SharedViewModel {
-    val platform: String
-        get() = Platform().platform
-    fun observeCounter(): CommonFlow<String>
-    fun increment()
-    fun decrement()
+import io.realm.RealmList
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+import io.realm.realmListOf
+
+class Counter: RealmObject {
+    @PrimaryKey
+    var _id: String = "primary"
+    var realm_id: String? = "my-partition"
+    // We haven't migrated RealmMutableInteger yet, so emulate it using a list.
+    var list: RealmList<Int> = realmListOf()
 }

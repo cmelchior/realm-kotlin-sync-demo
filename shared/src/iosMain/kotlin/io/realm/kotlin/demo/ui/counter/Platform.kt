@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo
+package io.realm.kotlin.demo.ui.counter
 
 import platform.UIKit.UIDevice
 

@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.realm.kotlin.demo
+package io.realm.kotlin.demo.ui.counter
 
-expect class Platform() {
+import io.realm.kotlin.demo.ui.SharedViewModel
+import io.realm.kotlin.demo.util.CommonFlow
+
+/**
+ * Interface describing the ViewModel on both the `shared` and `platform` side.
+ */
+interface CounterViewModel: SharedViewModel {
     val platform: String
+        get() = Platform().platform
+    fun observeCounter(): CommonFlow<String>
+    fun increment()
+    fun decrement()
 }

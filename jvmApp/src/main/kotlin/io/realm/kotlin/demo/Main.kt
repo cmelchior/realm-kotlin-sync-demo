@@ -31,7 +31,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import io.realm.kotlin.demo.theme.RealmColor
-import io.realm.kotlin.demo.shared.feature.counter.SharedCounterViewModel
+import io.realm.kotlin.demo.ui.counter.SharedCounterViewModel
 
 fun main() {
     val vm = SharedCounterViewModel()

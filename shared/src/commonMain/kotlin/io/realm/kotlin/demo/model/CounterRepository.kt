@@ -17,6 +17,7 @@ package io.realm.kotlin.demo.model
 
 import Counter
 import io.realm.Realm
+import io.realm.RealmConfiguration
 import io.realm.internal.platform.runBlocking
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
@@ -42,13 +43,21 @@ class CounterRepository {
 
     init {
         runBlocking {
+
+            // Enable local-only Realm support
+//            val config = RealmConfiguration.Builder(
+//                schema = setOf(Counter::class),
+//            )
+
+            // Enable Realm with Sync support
             val user = app.login(Credentials.emailPassword("foo@bar.com", "123456"))
             val config = SyncConfiguration.Builder(
                 schema = setOf(Counter::class),
                 user = user,
                 partitionValue = "my-partition"
-            )
-                .build()
+            ).build()
+
+            // Open Realm
             realm = Realm.open(config)
         }
 
